@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'List')
 @section('content')
+
 <div class="wrapper">
   <h1 style="text-align: center;">All Book</h1>
   @if($alert_toast = Session::get('alert_toast'))
@@ -13,27 +14,27 @@
     <div class="row">
       <div class="col-lg-2">
         <label for="exampleFormControlInput1" class="form-label">Book Title</label>
-        <input type="text" class="form-control" name="book_title">
+        <input type="text" class="form-control" name="book_title" value="{{ isset(Request::query()['book_title']) ? Request::query()['book_title'] : '' }}">
       </div>
       <div class="col-lg-2">
         <label for="exampleFormControlInput1" class="form-label">Description</label>
-        <input type="text" class="form-control" name="description">
+        <input type="text" class="form-control" name="description" value="{{ isset(Request::query()['description']) ? Request::query()['description'] : '' }}">
       </div>
       <div class="col-lg-2">
         <label for="exampleFormControlInput1" class="form-label">Category</label>
-        <input type="text" class="form-control" name="category">
+        <input type="text" class="form-control" name="category" value="{{ isset(Request::query()['category']) ? Request::query()['category'] : '' }}">
       </div>
       <div class="col-lg-2">
         <label for="exampleFormControlInput1" class="form-label">Keywords</label>
-        <input type="text" class="form-control" name="keywords">
+        <input type="text" class="form-control" name="keywords" value="{{ isset(Request::query()['keywords']) ? Request::query()['keywords'] : '' }}">
       </div>
       <div class="col-lg-2">
         <label for="exampleFormControlInput1" class="form-label">Price</label>
-        <input type="text" class="form-control" name="price">
+        <input type="text" class="form-control" name="price" value="{{ isset(Request::query()['price']) ? Request::query()['price'] : '' }}">
       </div>
       <div class="col-lg-1">
         <label for="exampleFormControlInput1" class="form-label">Publisher</label>
-        <input type="text" class="form-control" name="publisher">
+        <input type="text" class="form-control" name="publisher" value="{{ isset(Request::query()['publisher']) ? Request::query()['publisher'] : '' }}">
       </div>
     </div>
     <div class="row mt-3 mb-3">
